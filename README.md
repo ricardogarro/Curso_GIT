@@ -76,11 +76,3 @@ Este curso está diseñado para llevar a los desarrolladores desde los conceptos
 40. Auditoría y análisis de cambios con `git blame` y `git bisect`  
 
 ---
-
-### 🏆 **Conclusión**
-Este temario te llevará de ser un principiante en Git a manejarlo con confianza en entornos profesionales. Se recomienda acompañar cada módulo con ejercicios prácticos y proyectos colaborativos para afianzar el aprendizaje.
-
----
-
-🚀 **¡Listo para comenzar con Git!**
-
