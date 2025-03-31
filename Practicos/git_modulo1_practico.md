@@ -16,12 +16,3 @@
 9. Sin querer, hiciste un commit con un mensaje incorrecto. ¿Cómo lo corriges?
 10. Eliminaste un archivo importante del repositorio. ¿Cómo lo restauras si aún no has hecho commit?
 
-## 🔵 Ejercicios Prácticos Adicionales (Uso de Consola)
-11. Verifica la versión de Git instalada en tu sistema.
-12. Crea una nueva rama llamada `feature-nueva` y cámbiate a ella.
-13. Verifica el historial de commits de tu repositorio con detalles de cada cambio.
-14. Crea un alias en Git para acortar comandos largos.
-15. Cambia el editor de Git a Visual Studio Code y verifica la configuración.
-
----
-📌 **Instrucciones:** Realiza estos ejercicios en tu entorno de desarrollo y asegúrate de comprender cada comando y su uso.
