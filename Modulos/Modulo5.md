@@ -1,6 +1,6 @@
-## 🟠 Módulo 5: Pull Requests y Colaboración en GitHub/GitLab
+## Módulo 5: Pull Requests y Colaboración en GitHub/GitLab
 
-### 21. ¿Qué es un Pull Request (PR)? ¿En qué se diferencia de un Merge?
+### . ¿Qué es un Pull Request (PR)? ¿En qué se diferencia de un Merge?
 
 Un **Pull Request (PR)** es una solicitud para incorporar cambios desde una rama (por ejemplo, `feature/nueva-funcionalidad`) hacia otra (por lo general, `main` o `develop`).
 
@@ -9,7 +9,7 @@ Un **Pull Request (PR)** es una solicitud para incorporar cambios desde una rama
 
 ---
 
-### 22. Creación y revisión de PRs en GitHub/GitLab
+### . Creación y revisión de PRs en GitHub/GitLab
 
 #### ✅ Crear un Pull Request
 
@@ -20,7 +20,7 @@ git push origin feature/nueva-funcionalidad
 
 2. Ir a GitHub o GitLab y crear un PR desde esa rama hacia `main`.
 
-#### 👀 Revisar un Pull Request
+#### Revisar un Pull Request
 
 - Asignar revisores
 - Dejar comentarios
@@ -29,7 +29,7 @@ git push origin feature/nueva-funcionalidad
 
 ---
 
-### 23. Estrategias para aprobar cambios en equipo
+### Estrategias para aprobar cambios en equipo
 
 - ✅ **Revisión por pares (peer review)**
 - ✅ Reglas como: mínimo 2 aprobaciones antes de merge
@@ -39,7 +39,7 @@ git push origin feature/nueva-funcionalidad
 
 ---
 
-### 24. Resolución de conflictos en PRs
+### Resolución de conflictos en PRs
 
 Si hay conflictos, Git mostrará mensajes como:
 
@@ -47,7 +47,7 @@ Si hay conflictos, Git mostrará mensajes como:
 CONFLICT (content): Merge conflict in archivo.js
 ```
 
-#### 🔧 Pasos para resolver:
+#### Pasos para resolver:
 
 1. Editar manualmente los archivos y dejar solo el código correcto
 2. Marcar como resuelto:
@@ -67,7 +67,7 @@ git rebase --continue
 
 ---
 
-### 25. Integración continua con GitHub Actions o GitLab CI
+### Integración continua con GitHub Actions o GitLab CI
 
 #### 🚀 GitHub Actions
 
