@@ -76,12 +76,11 @@ Se trabaja directamente sobre la rama principal o "trunk", con integraciones fre
 
 **git merge**
 
-
-A---B---C topic
-     \
-      D---E main
-           \
-            F (merge commit)
+     A---B---C topic
+          \
+           D---E main
+                \
+                 F (merge commit)
 
 Descripción: Se toma la historia de topic y se la une a main con un merge commit (F).
 
@@ -93,9 +92,9 @@ Desventaja: El historial puede verse más "sucio" o con ramas entrecruzadas.
 
 **🎯 **git rebase**
 
-A---B---C topic (original)
-     \
-      D---E main
+     A---B---C topic (original)
+          \
+           D---E main
 
 Rebase: mueve la base de `topic` al final de `main`:
 
