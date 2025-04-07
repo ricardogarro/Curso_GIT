@@ -71,3 +71,42 @@ Ideal para despliegues continuos. Se trabaja con una rama principal (`main`) y r
 **Trunk-Based Development:**
 Se trabaja directamente sobre la rama principal o "trunk", con integraciones frecuentes y pruebas automáticas.
 
+
+
+
+**git merge**
+
+
+A---B---C topic
+     \
+      D---E main
+           \
+            F (merge commit)
+
+Descripción: Se toma la historia de topic y se la une a main con un merge commit (F).
+
+Resultado: La historia queda con una bifurcación (branch) visible.
+
+Ventaja: Se mantiene el historial completo y fiel de cómo se trabajó.
+
+Desventaja: El historial puede verse más "sucio" o con ramas entrecruzadas.
+
+**🎯 **git rebase**
+
+A---B---C topic (original)
+     \
+      D---E main
+
+Rebase: mueve la base de `topic` al final de `main`:
+
+              A'--B'--C'
+             /
+      D---E main
+
+Descripción: Se "reubica" la historia de topic sobre el último commit de main.
+
+Resultado: Historia lineal, como si todo hubiera pasado en una misma secuencia.
+
+Ventaja: El historial es más limpio.
+
+Desventaja: Puede ser peligroso si ya compartiste los commits, porque reescribe la historia.
