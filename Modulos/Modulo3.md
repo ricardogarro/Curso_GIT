@@ -93,9 +93,9 @@ Desventaja: El historial puede verse más "sucio" o con ramas entrecruzadas.
 
 **🎯 **git rebase**
 
-A---B---C topic (original)
-     \
-      D---E main
+     A---B---C topic (original)
+          \
+           D---E main
 
 Rebase: mueve la base de `topic` al final de `main`:
 
