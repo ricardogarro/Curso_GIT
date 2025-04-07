@@ -76,12 +76,11 @@ Se trabaja directamente sobre la rama principal o "trunk", con integraciones fre
 
 **git merge**
 
-
-A---B---C topic
-     \
-      D---E main
-           \
-            F (merge commit)
+     A---B---C topic
+          \
+           D---E main
+                \
+                 F (merge commit)
 
 Descripción: Se toma la historia de topic y se la une a main con un merge commit (F).
 
