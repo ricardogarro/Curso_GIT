@@ -1,121 +1,121 @@
-# Módulo 1: Introducción a Git y Control de Versiones
+# 🟢 Módulo 1: Introducción a Git y Control de Versiones
 
-## 1. ¿Qué es Git? Historia y Conceptos Clave
+## 1. ¿Qué es Git? Historia y conceptos clave
+
 ### Introducción a los sistemas de control de versiones
-Un sistema de control de versiones permite gestionar los cambios en archivos a lo largo del tiempo, facilitando la colaboración entre desarrolladores y la recuperación de versiones anteriores en caso de errores.
+
+Un sistema de control de versiones permite gestionar los cambios realizados en archivos a lo largo del tiempo. Es fundamental para equipos de desarrollo, ya que facilita la colaboración, el seguimiento de errores y la recuperación de versiones anteriores.
 
 ### Historia de Git
-Git fue creado por Linus Torvalds en 2005 para gestionar el desarrollo del kernel de Linux. Sus principales características incluyen:
-- **Distribuido**: Cada copia del repositorio es un historial completo.
-- **Seguro**: Usa SHA-1 para verificar la integridad de los datos.
-- **Eficiente**: Maneja grandes proyectos con rapidez.
+
+Git fue creado por Linus Torvalds en 2005 para gestionar el desarrollo del kernel de Linux. Entre sus principales características se destacan:
+
+- **Distribuido**: cada copia del repositorio tiene todo el historial.
+- **Seguro**: utiliza hashes SHA-1 para garantizar la integridad.
+- **Eficiente**: maneja grandes proyectos con agilidad.
 
 ### Ventajas de Git
-- Permite trabajar sin conexión y sincronizar cambios después.
-- Gestión eficiente de ramas y versiones.
-- Facilita la colaboración en equipos de desarrollo.
+
+- Permite trabajar sin conexión.
+- Facilita el trabajo colaborativo.
+- Brinda herramientas para control detallado de versiones.
 
 ---
 
 ## 2. Diferencia entre Git y GitHub/GitLab/Bitbucket
-### Git: Sistema de control de versiones
-Git es una herramienta de línea de comandos que permite gestionar versiones localmente sin necesidad de conexión a internet.
 
-### GitHub, GitLab y Bitbucket: Servicios de alojamiento de repositorios
-Son plataformas en la nube que proporcionan herramientas para compartir repositorios, colaborar en proyectos y gestionar el flujo de trabajo.
-- **GitHub**: Enfocado en código abierto y colaboración.
-- **GitLab**: Ofrece integración continua y DevOps.
-- **Bitbucket**: Integrado con Atlassian y Jira.
+### Git
 
-Diferencias clave:
+- Es una herramienta local de control de versiones.
+- Se utiliza desde la línea de comandos.
+- No requiere conexión a internet para la mayoría de sus operaciones.
 
-| Característica | Git | GitHub/GitLab/Bitbucket |
-|--------------|-----|------------------------|
-| Uso | Control de versiones local | Repositorios remotos y colaboración |
-| Interfaz | Línea de comandos | Web y CLI |
-| Colaboración | Manual (compartir archivos) | PRs, issues, revisiones |
+### GitHub, GitLab y Bitbucket
+
+- Son plataformas que alojan repositorios Git en la nube.
+- Proveen funcionalidades adicionales como:
+  - Pull Requests / Merge Requests
+  - Integración continua (CI/CD)
+  - Issues, wiki, gestión de proyectos
+
+| Característica       | Git                          | GitHub/GitLab/Bitbucket              |
+|----------------------|------------------------------|--------------------------------------|
+| Naturaleza           | Herramienta local             | Servicio en la nube                  |
+| Interfaz             | Línea de comandos             | Web y CLI                            |
+| Colaboración         | Manual (por archivos)         | Automatizada (PRs, revisiones, etc.)|
 
 ---
 
-## 3. Instalación y Configuración Inicial de Git
-### Instalación en Diferentes Sistemas Operativos
-#### Windows:
-1. Descargar e instalar [Git for Windows](https://git-scm.com/download/win).
-2. Durante la instalación, seleccionar "Git Bash" como terminal predeterminada.
+## 3. Instalación y configuración inicial de Git
 
-#### macOS:
+### Instalación
+
+#### Windows
+
+1. Descargar desde [git-scm.com](https://git-scm.com/download/win)
+2. Instalar seleccionando `Git Bash` como terminal recomendada.
+
+#### macOS
+
 ```bash
 brew install git
 ```
 
-#### Linux (Debian/Ubuntu):
+#### Linux (Debian/Ubuntu)
+
 ```bash
 sudo apt update && sudo apt install git
 ```
 
-### Configuración Básica de Git
-Una vez instalado, configurar el usuario y correo:
+### Configuración básica
+
 ```bash
 git config --global user.name "Tu Nombre"
 git config --global user.email "tuemail@example.com"
-git config --global core.editor "nano"  # O cualquier otro editor de preferencia
-git config --list  # Verificar la configuración
+git config --global core.editor "nano"
+git config --list
 ```
 
 ---
 
-## 4. Comandos Básicos de Git
-### Inicializar un Repositorio
+## 4. Comandos básicos
+
+### Verificar la versión de Git instalada
+
+```bash
+git --version
+```
+
+### Inicializar un repositorio
+
 ```bash
 git init
 ```
-Crea un nuevo repositorio en el directorio actual.
 
-### Clonar un Repositorio
-```bash
-git clone <url-del-repositorio>
-```
-Descarga un repositorio remoto a la máquina local.
+Crea un repositorio vacío en el directorio actual.
 
-### Estado del Repositorio
-```bash
-git status
-```
-Muestra los archivos modificados y los cambios pendientes.
+### Configurar el usuario (si no se hizo antes)
 
-### Agregar Cambios al Área de Staging
 ```bash
-git add <archivo>
-git add .  # Agrega todos los archivos modificados
+git config --global user.name "Nombre"
+git config --global user.email "correo@example.com"
 ```
-
-### Confirmar Cambios en el Repositorio
-```bash
-git commit -m "Mensaje descriptivo del cambio"
-```
-Cada commit crea una nueva versión en el historial del repositorio.
-
-### Ver el Historial de Commits
-```bash
-git log
-```
-Lista los commits realizados en el repositorio.
 
 ---
 
-## 5. Flujo de Trabajo en Git
-### Tres Áreas Principales
-1. **Working Directory (Directorio de trabajo)**: Donde se editan los archivos.
-2. **Staging Area (Área de preparación)**: Archivos listos para ser confirmados.
-3. **Repository (Repositorio local)**: Donde se almacenan los commits.
+## 5. Flujo de trabajo en Git
 
-### Flujo de Trabajo Típico
-1. **Modificar archivos** en el directorio de trabajo.
-2. **Agregar cambios** al staging con `git add`.
-3. **Confirmar los cambios** con `git commit`.
-4. **Subir cambios** a un repositorio remoto con `git push` (ver en módulos posteriores).
+Git se basa en tres áreas clave:
 
----
+1. **Working Directory**: donde se editan los archivos.
+2. **Staging Area**: donde se preparan los cambios a confirmar.
+3. **Repository**: donde se almacena el historial de cambios.
 
-## Conclusión
-Este módulo ha cubierto los conceptos fundamentales de Git, desde su instalación hasta el flujo de trabajo básico. A medida que avancemos en el curso, exploraremos comandos más avanzados y estrategias para trabajar en equipo de manera eficiente con Git.
+### Flujo básico:
+
+1. Modificar archivos.
+2. Agregarlos al staging con `git add`.
+3. Confirmarlos con `git commit`.
+4. Subirlos (más adelante) con `git push`.
+
+> Este flujo permite registrar los cambios de forma ordenada y segura.

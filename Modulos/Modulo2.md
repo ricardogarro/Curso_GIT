@@ -1,200 +1,124 @@
-# Módulo 2: Comandos Esenciales de Git
+# 🟡 Módulo 2: Comandos Esenciales de Git
 
-## 📌 Introducción
-En este módulo aprenderemos los comandos fundamentales de Git para gestionar repositorios, rastrear cambios y mantener un historial de versiones. Estos comandos permiten trabajar con el código de manera eficiente y segura.
+## 6. Creación y clonación de repositorios
 
----
+### Crear un repositorio local
 
-## 🟢 1. Creación y Clonación de Repositorios
-
-### 🔹 Crear un Nuevo Repositorio Local
-Para comenzar a utilizar Git en un proyecto, primero debemos inicializar un repositorio:
-
-```bash
+\`\`\`bash
 git init
-```
-- Este comando crea un nuevo repositorio en el directorio actual.
-- Se genera un directorio oculto `.git` donde Git almacena toda la información del historial del proyecto.
+\`\`\`
 
-### 🔹 Clonar un Repositorio Remoto
-Si queremos obtener una copia de un repositorio alojado en una plataforma como GitHub, usamos:
+Crea un nuevo repositorio vacío en el directorio actual.
 
-```bash
+### Clonar un repositorio remoto
+
+\`\`\`bash
 git clone <url-del-repositorio>
-```
+\`\`\`
+
 Ejemplo:
 
-```bash
+\`\`\`bash
 git clone https://github.com/user/proyecto.git
-```
-- Descarga todo el historial del repositorio y crea una copia local.
-- La carpeta creada tendrá la misma estructura del repositorio original.
+\`\`\`
+
+Esto descarga el historial completo del proyecto a tu máquina.
 
 ---
 
-## 🟡 2. Seguimiento de Cambios en Archivos
+## 7. Seguimiento de cambios en archivos
 
-### 🔹 Ver el Estado del Repositorio
-Para conocer qué archivos han cambiado en el repositorio, usamos:
+### Ver el estado del repositorio
 
-```bash
+\`\`\`bash
 git status
-```
-- Indica los archivos modificados, nuevos o eliminados.
-- Muestra si hay cambios preparados para commit.
+\`\`\`
 
-### 🔹 Agregar Archivos al Área de Staging
-Antes de confirmar cambios en Git, primero los agregamos al área de staging:
+Muestra los archivos modificados, eliminados o sin seguimiento.
 
-```bash
-git add <archivo>
-```
-O para agregar todos los archivos modificados:
+### Agregar archivos al staging
 
-```bash
-git add .
-```
+\`\`\`bash
+git add archivo.txt
+git add .  # Agrega todos los archivos modificados
+\`\`\`
 
-### 🔹 Confirmar Cambios en el Repositorio
-Para guardar los cambios en el historial de Git:
+### Confirmar los cambios (commit)
 
-```bash
-git commit -m "Descripción de los cambios"
-```
+\`\`\`bash
+git commit -m "Mensaje descriptivo del cambio"
+\`\`\`
 
-Ejemplo:
-
-```bash
-git commit -m "Añadir función de autenticación"
-```
-
-- Cada commit representa un punto en la historia del proyecto.
-- Se recomienda escribir mensajes de commit descriptivos y concisos.
+Guarda una nueva versión en el historial del repositorio.
 
 ---
 
-## 🔵 3. Inspección del Historial de Cambios
+## 8. Inspección del historial de cambios
 
-### 🔹 Ver el Historial de Commits
-Para visualizar los commits realizados en el repositorio:
+### Ver historial de commits
 
-```bash
+\`\`\`bash
 git log
-```
+\`\`\`
 
-Si queremos un historial más resumido:
+Para una vista más compacta y visual:
 
-```bash
+\`\`\`bash
 git log --oneline --graph --decorate --all
-```
+\`\`\`
 
-- Muestra el historial de commits en una vista compacta y visual.
+### Ver detalles de un commit
 
-### 🔹 Ver Detalles de un Commit Específico
-Si necesitamos inspeccionar los cambios de un commit:
-
-```bash
+\`\`\`bash
 git show <id-del-commit>
-```
-
-Ejemplo:
-
-```bash
-git show 3f8b2d1
-```
-
-- Muestra las diferencias introducidas por un commit específico.
+\`\`\`
 
 ---
 
-## 🟣 4. Comparación de Versiones
+## 9. Diferencias entre versiones
 
-### 🔹 Ver Cambios No Confirmados
-Para ver qué cambios se han realizado antes de hacer un commit:
+### Ver cambios no confirmados
 
-```bash
+\`\`\`bash
 git diff
-```
+\`\`\`
 
-Si queremos comparar un archivo específico:
+Comparar contra el último commit:
 
-```bash
-git diff <archivo>
-```
-
-### 🔹 Comparar con el Último Commit
-Si queremos ver la diferencia entre la versión actual y el último commit:
-
-```bash
+\`\`\`bash
 git diff HEAD
-```
+\`\`\`
 
-- Útil para verificar qué cambios se han hecho antes de confirmarlos.
+Comparar un archivo específico:
 
----
-
-## 🟠 5. Deshacer y Modificar Commits
-
-### 🔹 Restaurar un Archivo al Último Estado Confirmado
-Si hicimos cambios en un archivo pero queremos volver a la última versión confirmada:
-
-```bash
-git checkout -- <archivo>
-```
-
-### 🔹 Eliminar Archivos del Staging sin Perderlos
-Si agregamos un archivo al staging pero queremos sacarlo antes del commit:
-
-```bash
-git reset <archivo>
-```
-
-Para eliminar todos los archivos del staging:
-
-```bash
-git reset
-```
-
-### 🔹 Revertir un Commit
-Si ya hicimos un commit pero queremos deshacerlo:
-
-```bash
-git revert <id-del-commit>
-```
-
-Ejemplo:
-
-```bash
-git revert 2a7b3c9
-```
-
-- Crea un nuevo commit que revierte los cambios anteriores.
-- No elimina el historial, sino que agrega un nuevo punto que anula el commit seleccionado.
-
-### 🔹 Modificar el Último Commit (`git commit --amend`)
-A veces cometemos errores en un commit, como un mensaje incorrecto o archivos que olvidamos agregar. Podemos corregir el último commit con:
-
-```bash
-git commit --amend -m "Nuevo mensaje del commit"
-```
-
-- Esto reemplaza el mensaje del último commit sin crear uno nuevo.
-- Si olvidamos agregar un archivo antes del commit, podemos hacer:
-
-```bash
-git add archivo_nuevo.txt
-git commit --amend --no-edit
-```
-
-- Esto agrega el archivo al commit sin cambiar el mensaje.
-
-⚠ **Nota**: `--amend` solo debe usarse en commits que aún no han sido enviados a un repositorio remoto con `git push`. Si ya subiste el commit, tendrás que hacer un `git push --force`.
+\`\`\`bash
+git diff archivo.txt
+\`\`\`
 
 ---
 
-## 🟤 Conclusión
-Este módulo cubre los comandos esenciales para trabajar con Git en un entorno profesional. Comprender estos comandos es fundamental antes de avanzar a temas más avanzados como ramas, trabajo en equipo y manejo de repositorios remotos.
+## 10. Deshacer cambios
+
+### Restaurar un archivo al último commit
+
+\`\`\`bash
+git restore archivo.txt
+\`\`\`
+
+### Quitar archivos del staging
+
+\`\`\`bash
+git reset archivo.txt
+\`\`\`
+
+### Volver un archivo a su estado anterior
+
+\`\`\`bash
+git checkout -- archivo.txt
+\`\`\`
+
+> ⚠️ `git checkout` en este contexto es equivalente a `restore`, pero su uso está siendo reemplazado por comandos más explícitos como `git switch` y `git restore`.
 
 ---
 
-📌 **Recomendación:** Practica cada comando en un entorno seguro antes de aplicarlo en proyectos reales.
+> 🎯 Estos comandos forman la base para gestionar versiones, colaborar con otros y mantener un control riguroso del código fuente.
