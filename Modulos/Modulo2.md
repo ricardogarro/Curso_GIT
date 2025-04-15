@@ -4,23 +4,23 @@
 
 ### Crear un repositorio local
 
-\`\`\`bash
+```bash
 git init
-\`\`\`
+```
 
 Crea un nuevo repositorio vacío en el directorio actual.
 
 ### Clonar un repositorio remoto
 
-\`\`\`bash
+```bash
 git clone <url-del-repositorio>
-\`\`\`
+```
 
 Ejemplo:
 
-\`\`\`bash
+```bash
 git clone https://github.com/user/proyecto.git
-\`\`\`
+```
 
 Esto descarga el historial completo del proyecto a tu máquina.
 
@@ -30,24 +30,24 @@ Esto descarga el historial completo del proyecto a tu máquina.
 
 ### Ver el estado del repositorio
 
-\`\`\`bash
+```bash
 git status
-\`\`\`
+```
 
 Muestra los archivos modificados, eliminados o sin seguimiento.
 
 ### Agregar archivos al staging
 
-\`\`\`bash
+```bash
 git add archivo.txt
 git add .  # Agrega todos los archivos modificados
-\`\`\`
+```
 
 ### Confirmar los cambios (commit)
 
-\`\`\`bash
+```bash
 git commit -m "Mensaje descriptivo del cambio"
-\`\`\`
+```
 
 Guarda una nueva versión en el historial del repositorio.
 
@@ -57,21 +57,21 @@ Guarda una nueva versión en el historial del repositorio.
 
 ### Ver historial de commits
 
-\`\`\`bash
+```bash
 git log
-\`\`\`
+```
 
 Para una vista más compacta y visual:
 
-\`\`\`bash
+```bash
 git log --oneline --graph --decorate --all
-\`\`\`
+```
 
 ### Ver detalles de un commit
 
-\`\`\`bash
+```bash
 git show <id-del-commit>
-\`\`\`
+```
 
 ---
 
@@ -79,21 +79,21 @@ git show <id-del-commit>
 
 ### Ver cambios no confirmados
 
-\`\`\`bash
+```bash
 git diff
-\`\`\`
+```
 
 Comparar contra el último commit:
 
-\`\`\`bash
+```bash
 git diff HEAD
-\`\`\`
+```
 
 Comparar un archivo específico:
 
-\`\`\`bash
+```bash
 git diff archivo.txt
-\`\`\`
+```
 
 ---
 
@@ -101,24 +101,21 @@ git diff archivo.txt
 
 ### Restaurar un archivo al último commit
 
-\`\`\`bash
+```bash
 git restore archivo.txt
-\`\`\`
+```
 
 ### Quitar archivos del staging
 
-\`\`\`bash
+```bash
 git reset archivo.txt
-\`\`\`
+```
 
 ### Volver un archivo a su estado anterior
 
-\`\`\`bash
+```bash
 git checkout -- archivo.txt
-\`\`\`
+```
 
-> ⚠️ `git checkout` en este contexto es equivalente a `restore`, pero su uso está siendo reemplazado por comandos más explícitos como `git switch` y `git restore`.
+>  `git checkout` en este contexto es equivalente a `restore`, pero su uso está siendo reemplazado por comandos más explícitos como `git switch` y `git restore`.
 
----
-
-> 🎯 Estos comandos forman la base para gestionar versiones, colaborar con otros y mantener un control riguroso del código fuente.
